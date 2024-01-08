@@ -34,6 +34,8 @@ RUN python3 ./setup.py develop
 COPY ./dominik_DE /app/recipes/dominik_DE
 
 #ENTRYPOINT ["tts"]
-CMD tail -f /dev/null
+#CMD tail -f /dev/null
+CMD python3 /app/TTS/bin/train_tts.py --config_path /app/recipes/dominik_DE/config.json
+#CMD python3 /app/recipes/dominik_DE/train_tacotron_ddc.py
 
 EXPOSE 8888
