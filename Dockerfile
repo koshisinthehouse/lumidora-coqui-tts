@@ -16,14 +16,12 @@ RUN git clone https://github.com/coqui-ai/TTS.git /app
 RUN pip install --no-cache-dir -r requirements.txt
 RUN python3 ./setup.py develop
 COPY ./dominik_DE /app/recipes/dominik_DE
+COPY ./run.sh /app/run.sh
 
-
-RUN nohup tensorboard --logdir=/app/recipes/dominik_DE/ --bind_all > /dev/null 2>&1 &
-RUN nohup jupyter notebook --ip=0.0.0.0 --port=8888 --notebook-dir=/app/notebooks/dataset_analysis --allow-root --no-browser > /dev/null 2>&1 &
 
 #CMD tail -f /dev/null
 #CMD python3 /app/recipes/dominik_DE/train_tacotron_ddc.py
-CMD python3 /app/TTS/bin/train_tts.py --config_path /app/recipes/dominik_DE/config.json
+CMD ./run.sh
 
 EXPOSE 6006
 EXPOSE 8888

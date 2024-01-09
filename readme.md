@@ -21,9 +21,12 @@
 
 # look at 
     http://127.0.0.1:6006/
+    http://127.0.0.1:8888/[TOKEN]
 
-geht noch nicht
-./compute_statistics.py config_path=/app/TTS/recipes/dominik_DE/metadata.csv out_path=/app/TTS/recipes/dominik_DE/out
+
+# Nützlihe Tools
+    python3 /app/TTS/bin/find_unique_chars.py --config_path=/app/recipes/dominik_DE/config.json
+    python3 /app/TTS/bin/find_unique_phonemes.py --config_path=/app/recipes/dominik_DE/config.json
 
 
 cd Domoskanonos_Tacotron2_ddc-January-07-2024_06+10PM-5dcc16d1
