@@ -19,6 +19,20 @@ dataset_config = BaseDatasetConfig(language="de_DE",
     formatter="ljspeech", meta_file_train="metadata.csv", path=os.path.join(output_path, "./")
 )
 
+# VOCABULARY PARAMETERS
+    # if custom character set is not defined,
+    # default set in symbols.py is used
+    # "characters":{
+    #     "pad": "_",
+    #     "eos": "~",
+    #  "bos": "^",
+    #    "characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!'(),-.:;? ",
+    #     "punctuations":"!'(),-.:;? ",
+    #     "phonemes":"iyɨʉɯuɪʏʊeøɘəɵɤoɛœɜɞʌɔæɐaɶɑɒᵻʘɓǀɗǃʄǂɠǁʛpbtdʈɖcɟkɡqɢʔɴŋɲɳnɱmʙrʀⱱɾɽɸβfvθðszʃʒʂʐçʝxɣχʁħʕhɦɬɮʋɹɻjɰlɭʎʟˈˌːˑʍwɥʜʢʡɕʑɺɧɚ˞ɫ"
+    # },
+
+
+
 # mel_fmin=0.0,
 audio_config = BaseAudioConfig(
     sample_rate=22050,
@@ -51,11 +65,12 @@ config = Tacotron2Config(  # This is the config that is saved for the future use
     epochs=1000,
     text_cleaner="phoneme_cleaners",
     use_phonemes=True,
-    phoneme_language="de-de",
+    phoneme_language="de",
     phoneme_cache_path=os.path.join(output_path, "phoneme_cache"),
     precompute_num_workers=8,
     print_step=25,
     print_eval=True,
+    #max_audio_len=22050 * 10,
     mixed_precision=False,
     output_path=output_path,
     datasets=[dataset_config],
