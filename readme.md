@@ -3,7 +3,7 @@
     docker build -t my-tts-image .
 
 # run container
-    docker run -p 8888:8888 -p 6006:6006 -v "my-tts-image:/app/recipes/dominik_DE" --gpus 1 --shm-size=2g my-tts-image
+    docker run -p 8888:8888 -p 6006:6006 -v "my-tts-image:/app/recipes/dominik_DE" --gpus 1 my-tts-image
 
 # run container with CONTINUE_PATH
     docker run -p 8888:8888 -p 6006:6006 -v "my-tts-image:/app/recipes/dominik_DE" --gpus 1 --shm-size=2g -e CONTINUE_PATH='/app/recipes/dominik_DE/Domoskanonos_Tacotron2_ddc-January-09-2024_12+20PM-5dcc16d1' my-tts-image
