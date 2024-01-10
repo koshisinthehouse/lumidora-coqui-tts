@@ -39,7 +39,7 @@ audio_config = BaseAudioConfig(
     do_trim_silence=True,
     trim_db=60.0,
     signal_norm=False,
-    mel_fmin=50,
+    mel_fmin=0.0,
     mel_fmax=8000,
     spec_gain=1.0,
     log_func="np.log",
@@ -48,19 +48,15 @@ audio_config = BaseAudioConfig(
 )
 
 config = Tacotron2Config(  # This is the config that is saved for the future use
-    run_name="Domoskanonos_Tacotron2_ddc",
-    run_description="Domoskanonos Tacotron2 DDC model with Dominik's dataset",
-    save_step=2000,
-    save_all_best=True,
     audio=audio_config,
-    batch_size=16, # BS of 40 and max length of 10s will use about 20GB of GPU memory
+    batch_size=40,  # BS of 40 and max length of 10s will use about 20GB of GPU memory
     eval_batch_size=16,
-    num_loader_workers=8,
-    num_eval_loader_workers=8,
+    num_loader_workers=4,
+    num_eval_loader_workers=4,
     run_eval=True,
     test_delay_epochs=-1,
-    r=7,
-    gradual_training= [[0, 7, 16], [10000, 5, 16], [50000, 3, 16], [130000, 2, 8], [290000, 1, 8]],
+    r=6,
+    gradual_training=[[0, 6, 64], [10000, 4, 32], [50000, 3, 32], [100000, 2, 32]],
     double_decoder_consistency=True,
     epochs=1000,
     text_cleaner="phoneme_cleaners",
@@ -70,10 +66,7 @@ config = Tacotron2Config(  # This is the config that is saved for the future use
     precompute_num_workers=8,
     print_step=25,
     print_eval=True,
-    #max_audio_len=44100 * 10,
     mixed_precision=False,
-    output_path=output_path,
-    datasets=[dataset_config],
     test_sentences=[
         "Es hat mich viel Zeit gekostet ein Stimme zu entwickeln, jetzt wo ich sie habe werde ich nicht mehr schweigen.",
         "Sei eine Stimme, kein Echo.",
@@ -81,6 +74,10 @@ config = Tacotron2Config(  # This is the config that is saved for the future use
         "Dieser Kuchen ist großartig. Er ist so lecker und feucht.",
         "Vor dem 22. November 1963.",
     ],
+    # max audio length of 10 seconds, feel free to increase if you got more than 20GB GPU memory
+    max_audio_len=44100 * 10,
+    output_path=output_path,
+    datasets=[dataset_config],
 )
 
 # init audio processor

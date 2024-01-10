@@ -6,5 +6,6 @@ then
   python3 /app/TTS/bin/train_tts.py --config_path /app/recipes/dominik_DE/config.json  --continue_path $CONTINUE_PATH
 else
   echo "CONTINUE_PATH ist nicht gesetzt oder die config.json Datei existiert nicht"
-  python3 /app/recipes/dominik_DE/train_tacotron_ddc.py
+  #python3 /app/recipes/dominik_DE/train_tacotron_ddc.py
+  python3 /app/recipes/dominik_DE/train_vits.py
 fi
