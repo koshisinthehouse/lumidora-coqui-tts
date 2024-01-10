@@ -18,9 +18,7 @@ RUN python3 ./setup.py develop
 COPY ./dominik_DE /app/recipes/dominik_DE
 COPY ./run.sh /app/run.sh
 
-
 #CMD tail -f /dev/null
-#CMD python3 /app/recipes/dominik_DE/train_tacotron_ddc.py
 CMD ./run.sh
 
 EXPOSE 6006
