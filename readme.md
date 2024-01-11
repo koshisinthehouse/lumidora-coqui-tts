@@ -36,7 +36,7 @@
 
 
 Synthezizen mit Checkpoint
-python3 /app/TTS/bin/synthesize.py --model_path=[CHECKPOINT_PATH] --config_path=/app/recipes/dominik_DE/config.json --out_path=/app/recipes/dominik_DE/out --text="Das ist ein toller Text"
+python3 /app/TTS/bin/synthesize.py --model_path=/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_06+37PM-5dcc16d1/checkpoint_12000.pth --config_path=/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_06+37PM-5dcc16d1/config.json --out_path=/app/recipes/dominik_DE/out/test.wav --text="Das ist ein toller Text"
 
 
 Für executable fertig trainierte Stimmen auszuführen:
