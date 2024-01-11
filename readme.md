@@ -6,7 +6,7 @@
     docker run -p 8888:8888 -p 6006:6006 -v "my-tts-image:/app/recipes/dominik_DE" --gpus 1 my-tts-image
 
 # run container with CONTINUE_PATH
-    docker run -p 8888:8888 -p 6006:6006 -v "my-tts-image:/app/recipes/dominik_DE" --gpus 1 --shm-size=2g -e CONTINUE_PATH='/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_04+15PM-5dcc16d1' CONFIG_PATH='/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_04+15PM-5dcc16d1/config.json' my-tts-image
+    docker run -p 8888:8888 -p 6006:6006 -v "my-tts-image:/app/recipes/dominik_DE" --gpus 1 --shm-size=2g -e CONTINUE_PATH='/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_06+37PM-5dcc16d1' -e CONFIG_PATH='/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_06+37PM-5dcc16d1/config.json' my-tts-image
 
 # windows volume url
     \\wsl.localhost\docker-desktop-data\data\docker\volumes\my-tts-image\_data\
