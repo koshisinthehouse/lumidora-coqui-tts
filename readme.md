@@ -36,7 +36,7 @@
 
 
 Synthezizen mit Checkpoint
-python3 /app/TTS/bin/synthesize.py --model_path=/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_06+37PM-5dcc16d1/checkpoint_38000.pth --config_path=/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_06+37PM-5dcc16d1/config.json --out_path=/app/recipes/dominik_DE/out/test.wav --text="Leonas ist ein sechsjähriger Junge, dessen Leben sich zwischen der normalen Welt und einer aufregenden Parallelwelt abspielt, zu der er durch ein geheimnisvolles Portal unter dem Phönixsee Zugang hat. In dieser Parallelwelt ist er der Anführer der Gruppe "Die Goldjungs", die aus ihm und seinen treuen Freunden besteht. Trotz seines jungen Alters zeichnet sich Leonas durch seine außergewöhnlichen Führungsqualitäten und eine natürliche Autorität aus, was ihn zum unumstrittenen Kopf seiner Gruppe macht."
+python3 /app/TTS/bin/synthesize.py --model_path=/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_06+37PM-5dcc16d1/checkpoint_38000.pth --config_path=/app/recipes/dominik_DE/vits_dominik-de-January-10-2024_06+37PM-5dcc16d1/config.json --out_path=/app/recipes/dominik_DE/out/test.wav --text="Leonas ist ein sechsjähriger Junge, dessen Leben sich zwischen der normalen Welt und einer aufregenden Parallelwelt abspielt, zu der er durch ein geheimnisvolles Portal unter dem Phönixsee Zugang hat. In dieser Parallelwelt ist er der Anführer der Gruppe Die Goldjungs, die aus ihm und seinen treuen Freunden besteht. Trotz seines jungen Alters zeichnet sich Leonas durch seine außergewöhnlichen Führungsqualitäten und eine natürliche Autorität aus, was ihn zum unumstrittenen Kopf seiner Gruppe macht."
 
 
 
